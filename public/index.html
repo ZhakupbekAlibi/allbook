@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="decode">
+<head>
+	<!-- Made By Automato Team.
+	All rights reserved. -->
+
+    <base href="/">
+    <meta name="fragment" content="!">
+    <meta name="robots" content="index, follow">
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Decode | 3 streem</title>
+
+	<link rel="icon" type="image/png" href="favicon.png"/>
+
+	<!-- Styles -->
+	<link href="style/all.css" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">-->
+</head>
+	<body>
+		<header class="header" ng-controller="HeaderCtrl as vm">
+			<div class="header">
+			    <div class="container">
+			        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+			          <a style="font-size: 25px;font-family: 'Dancing Script', cursive; font-weight:700;" class="navbar-brand" href="news.html">AllBook</a>
+			            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			              <span class="navbar-toggler-icon"></span>
+			            </button>
+			          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			            <div class="navbar-nav">
+			              <a class="nav-item nav-link active" ui-sref="home">News</a>
+			              <a class="nav-item nav-link" href="books.html">Books</a>
+			              <a class="nav-item nav-link" href="writers.html">Writers</a>
+			               <a class="nav-item nav-link" ng-if="vm.user" ui-sref="profile">Profile</a>
+			            </div>
+			          </div>
+				        <div class="avatar" ng-if="vm.user">
+							<img src="images/avatar.jpg" bs-dropdown>
+							<ul class="dropdown-menu" role="menu" >
+								<li  ng-click="vm.logout()" >Logout</li>
+							</ul>
+						</div>
+						<div class="auth" ng-if="!vm.user">
+							<ul>
+								<li ng-click="vm.openLogin()"><a>Login</a></li>
+								<li ng-click="vm.openSignup()"><a>Sign up</a></li>
+							</ul>
+						</div>
+			        </nav>
+			    </div>
+  			</div>
+
+
+
+		</header>
+		
+		<main ui-view class="wrapper">
+			
+		</main>
+		
+			 <!--Scripts -->
+	
+		<script src="js/vendor/ng.min.js"></script>
+		<script src="js/vendor/ng-route.min.js"></script>
+		<script src="js/vendor/ng-strap.js"></script>
+		<script src="js/vendor/ng-strap.min.js"></script>
+		<script src="js/vendor/ng-cookies.js"></script>
+		<script src="js/vendor/ng-resource.js"></script>
+		<script src="js/vendor/naif.base64.js"></script>
+	
+		<script src="app.js"></script>
+		
+		<!-- for auth -->
+		<script src="js/auth/controller.login.js"></script>
+		<script src="js/auth/controller.signup.js"></script>
+		<script src="js/auth/service.auth.js"></script>
+		
+		<!--Main-->
+		<script src="js/main/controller.header.js"></script>
+		<script src="js/main/controller.home.js"></script>
+		<script src="js/main/controller.author.js"></script>
+	
+		<!-- Posts -->
+		<script src="js/post/controller.profile.js"></script>
+		<script src="js/post/controller.modal-edit--blog.js"></script>
+		<script src="js/post/controller.modal-add--blog.js"></script>
+		<script src="js/post/controller.blog.js"></script>
+	</body>
+</html>
+
+
+
+	
