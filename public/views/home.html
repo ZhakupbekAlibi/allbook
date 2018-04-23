@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title>AllBook</title>
+</head>
+<body>
+    <!--end-header!-->
+    <div class="main" >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 col-md-8 order-1 order-lg-2">
+            <div class="card book_block" ng-repeat="blog in vm.blogs"  ui-sref="blog({id: blog._id, from: 'home'})" style="margin-bottom: 20px;">
+              <div class="card-body" >
+                <div class="row">
+                  <img style="margin-left: 1rem;" id="img-book" class="card-img-top" src="img/book4.jpg" ng-src="{{blog.img}}">
+                  <div class="books_text">
+                    <span class="grid-item--title" ng-bind="blog.user.name" ng-click="$event.stopPropagation()" ui-sref="author({user_id: blog.user._id})"></span>
+                    <h5 ng-bind="blog.title">Евразийский проект Нурсултана Назарбаева, воплощенный в жизнь</h5>
+                    <p class="news-text" ng-bind="blog.description">
+                        В настоящей книге впервые на документальной основе всесторонне рассматривается реализация
+                        Евразийского проекта, предложенного Президентом Республики Казахстан Н.А.Назарбаевым в марте
+                        1994 года в МГУ им.М.В.Ломоносова. Реальным воплощением в жизнь проекта Нурсултана Назарбаева
+                        являются Евразийское экономическое сообщество, Таможенный союз и формирующееся Единое
+                        экономическое пространство.
+                    </p>
+                    <p><b>Rating:</b> 7.6</p>
+                    <p><b>Genres:</b> Философия, Антиутопия</p>
+                    <p><b>Size:</b> 2 parts</p>
+
+                           <!--  <div ng-repeat="blog in vm.blogs"  ui-sref="blog({id: blog._id, from: 'home'})">
+                                <span class="grid-item--title" ng-bind="blog.user.name" ng-click="$event.stopPropagation()" ui-sref="author({user_id: blog.user._id})"></span>
+                                <span class="grid-item--img">
+                                    <img ng-src="{{blog.img}}">
+                                </span>
+                                <span class="grid-item--title" ></span>
+                                <span class="grid-item--date" ></span>
+                            </div> -->
+
+                    </div>
+                </div>
+                  <p style="margin-top: 1rem;" class="card-text"><small class="text-muted" ng-bind="blog.date | date"></small></p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Read more</a>
+                  <button type="button" class="btn btn-outline-danger btn-sm">Like</button><a style="padding: 3px 0 0 10px;">414</a>
+              </div>
+            </div>
+
+            <nav style="margin-top: 2rem;" aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end-main!-->
+    <footer style="margin-left: -32px;" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 ">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <p style="margin-left: 20px;margin-top: 12px;">All rights reserved &copy2018</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <p style="margin-left: 20px;margin-top: 12px;">Made by team Alibot &#8482;</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end-footer!-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>

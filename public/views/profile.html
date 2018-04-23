@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <title>AllBook</title>
+</head>
+<body>
+
+    <!--end-header!-->
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 order-1 order-lg-1">
+          <div class="card" style="width: 14rem;">
+            <img class="card-img-top" src="img/avatar.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 id="profile-name" class="card-title" ng-bind="currentUser.name">Tyrion Lannister</h5>
+              <a style="width: 100%;" href="#" class="btn btn-success">Follow</a>
+            </div>
+          </div>
+          <div class="card" style="margin-top: 2rem;width: 14rem;">
+            <div class="card-body">
+              <p><b>Email:</b><br> <a ng-bind="currentUser.email">Lannister@gmail.com</a></p>
+              <p><b>Was born:</b><br> 29.10.1957</p>
+              <p><b>Location:</b><br> Westeros, Winterfell</p>
+            </div>
+          </div>
+
+
+          <!-- div class="block small">
+            <span ng-bind="currentUser.name"></span><br>
+            <span ng-bind="currentUser.email"></span>
+        </div> -->
+        <!-- <div class="block big">
+            <span class="block-title">posts</span>
+            <span ng-click="vm.addPost()">add
+            </span>
+            <div class="grid">  
+                <div class="grid-item" ng-repeat="blog in vm.blogs"  ui-sref="blog({id: blog._id, from:'profile'})">
+                    <div class="grid-editor">
+                        <span ng-click="vm.delete(blog);$event.stopPropagation()">
+                            <img src="images/trash.svg" />
+                        </span>
+                        <span ng-click="vm.editBlog(blog);$event.stopPropagation()">
+                            <img src="images/edit.svg" />            
+                        </span>
+                    </div>  
+                    <span class="grid-item--img">
+                        <img ng-src="{{blog.img}}">
+                    </span>
+                    <span class="grid-item--title" ng-bind="blog.title"></span>
+                    <span class="grid-item--date" ng-bind="blog.date | date"></span>
+                </div>
+            </div>
+        </div> -->
+
+
+
+
+        </div>
+          <!--col-3!-->
+        <div id="about-block" class="col-lg-8 col-md-10 order-1 order-lg-1">
+          <ul id="about-tabs" class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+              <a href="#about-me" class="nav-link" role="tab" data-toggle="tab">About me</a>
+            </li>
+            <li class="nav-item">
+              <a href="#my-books" class="nav-link" role="tab" data-toggle="tab">Books</a>
+            </li>
+            <li id="btn-add_book">
+              <a href="#" class="btn btn-success" ng-click="vm.addPost()">Add book</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active about-text" id="about-me">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet,
+                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
+                repellendus ad debitis sequi maiores laborum, alias dicta eum obcaecati quod nulla. Alias facere, corporis
+                laborum minus, expedita ipsam assumenda esse.
+                <div class="about-profile-section-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h4 class="about-sections">My hobbies</h4>
+                      <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+
+                    <div class="card-body">
+                      <h4 class="about-sections">How did I start writing?</h4>
+                      <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane about-text" id="my-books">
+              <div class="card">
+                <div class="card-body">
+                  <h5>XXI: Заблуждение в сети</h5>
+                  <p class="news-text">
+                    Век, где царит технология и жестокость. Изменилось все. Мужчина меняется в
+                    женщину, или женщина меняется в мужчину. Увеличиваются количество убийств и насилий,
+                    а люди позабыли, что такое грех. Люди застряли в социальных сетях. Начался тот самый
+                    век когда, виртуальность захватывает реальность.
+                  </p>
+                  <p><b>Rating:</b> 7.6</p>
+                  <p><b>Genres:</b> Философия, Антиутопия</p>
+                  <p><b>Size:</b> 2 parts</p>
+                  <p><b>Status:</b> Finished</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Read more</a>
+                  <button type="button" class="btn btn-outline-danger btn-sm">Like</button>
+                </div>
+              </div>
+              <div style="margin-top:2rem;" class="card">
+                <div class="card-body">
+                  <h5>The Catcher in the Rye</h5>
+                  <p class="news-text">The Catcher in the Rye is a story by J. D. Salinger, first published in
+                    serial form in 1945-6 and as a novel in 1951.A classic novel originally published for adults,
+                    it has since become popular with adolescent readers for its themes of teenage angst and alienation.
+                    It has been translated into almost all of the world's major languages. Around 1 million
+                    copies are sold each year with total sales of more than 65 million books. The novel's protagonist
+                    Holden Caulfield has become an icon for teenage rebellion. The novel also deals with complex issues
+                    of innocence, identity, belonging, loss, and connection.</p>
+                    <p><b>Rating:</b> 9.6</p>
+                    <p><b>Genres:</b> Философия, Антиутопия</p>
+                    <p><b>Size:</b> 20 parts</p>
+                    <p><b>Status:</b> Finished</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Read more</a>
+                    <button type="button" class="btn btn-outline-danger btn-sm">Like</button>
+                </div>
+              </div>
+          </div>
+          <!--col-6!-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end-main!-->
+    <footer style="margin-left: -32px;" class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <p style="margin-top: 12px;">All rights reserved &copy2018</p>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <p style="margin-top: 12px;">Made by team Alibot &#8482;</p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--end-footer!-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>

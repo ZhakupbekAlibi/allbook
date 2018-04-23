@@ -1,0 +1,29 @@
+<div class="modal">
+    <div class="modal-wrapper">
+        <span class="modal-close" ng-click="$hide()">
+            <img src="images/close.svg">
+        </span>
+        <span class="modal-title">
+            Add blog
+        </span>
+        <form ng-submit="vm.saveIt();$hide();">
+            <fieldset class="form-field">
+                <input type="file" class="input-file" 
+			    ng-model="asd" 
+				base-sixty-four-input 
+				on-after-validate="vm.loadImg(asd)"/>
+			    <img ng-if="!vm.img" src="images/add-file.svg">
+			    <img ng-if="vm.img" src="{{vm.img}}">
+            </fieldset>
+             <fieldset class="form-field">
+                <input type="text" ng-model="vm.title" />
+            </fieldset>
+            <fieldset class="form-field">
+                <textarea ng-model="vm.description"></textarea>
+            </fieldset>
+            <fieldset class="form-field">
+                <button type="submit">Save</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

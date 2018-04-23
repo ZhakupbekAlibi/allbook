@@ -1,0 +1,41 @@
+<div class="blog">
+    <!--<span ng-click="vm.goBack()">Back</span>-->
+    <div class="half">
+        <img style="width: 100%;" ng-src="{{vm.blog.img}}"> 
+        <div class="like">
+            <img ng-click="vm.likeIt()" src="images/like.svg" style="width:20px; height: 20px;">
+            <span>0</span>
+        </div>
+        
+        <div class="list">
+            <div class="list-item" ng-repeat="comment in vm.comments" ng-class="{'active':vm.editcomment_id==comment._id }">
+                <div class="list-item--img"></div>
+                <div class="list-item--content">
+                    <span class="list-item--title" ng-bind="comment.user.name"></span>
+                    <input ng-disabled="vm.editcomment_id!=comment._id" ng-blur="vm.editComment(comment)" class="list-item--description" ng-model="comment.description">
+                    <span class="list-item--info" ng-bind="comment.date | date"></span>
+                </div>
+                <div class="list-editor">
+                    <span ng-if="currentUser._id==vm.blog.user._id || currentUser._id==comment.user._id" ng-click="vm.delete(comment)"><img src="images/trash.svg" style="width: 15px; height:15px;"></span>
+                    <span ng-if="currentUser._id==comment.user._id" ng-click="vm.edit(comment)"><img src="images/edit.svg" style="width: 15px; height:15px;"></span>
+                </div>
+            </div>
+            <div class="edit-backdrop" ng-if="vm.editcomment_id!=''" ng-click="vm.editcomment_id=''"></div>
+            <div class="list-add">
+                <div class="list-add--img"></div>
+                <div class="list-add--form">
+                    <form ng-submit="vm.saveComment()">
+                        <textarea ng-model="vm.description" class="add-comment"></textarea>
+                        <button type="submit" class="button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div  class="half content">
+        <span ng-bind="vm.blog.title"></span>
+        <span ng-bind="vm.blog.date | date"></span>
+        <span ng-bind="vm.blog.description"></span><br>
+        <br>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="modal">
+    <div class="modal-wrapper">
+        <span class="modal-close" ng-click="$hide()">
+            <img src="images/close.svg">
+        </span>
+        <span class="modal-title">
+            Login
+        </span>
+        <form ng-submit="vm.login();$hide();">
+             <fieldset class="form-field">
+                <input type="text" ng-model="vm.email" />
+            </fieldset>
+            <fieldset class="form-field">
+                <input type="password" ng-model="vm.password" />
+            </fieldset>
+            <fieldset class="form-field">
+                <button type="submit">Login</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

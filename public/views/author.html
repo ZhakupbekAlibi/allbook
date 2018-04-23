@@ -1,0 +1,17 @@
+
+<div class="block small">
+    <span ng-bind="vm.user.name"></span><br>
+    <span ng-bind="vm.user.email"></span><br>
+</div>
+<div class="block big">
+    <span class="block-title">posts</span>
+    <div class="grid">
+        <div class="grid-item" ng-repeat="blog in vm.blogs"  ui-sref="blog({id: blog._id, from:'author'})">
+            <span class="grid-item--img">
+                <img ng-src="{{blog.img}}">
+            </span>
+            <span class="grid-item--title" ng-bind="blog.title"></span>
+            <span class="grid-item--date" ng-bind="blog.date | date"></span>
+        </div>
+    </div>
+</div>
