@@ -1,0 +1,56 @@
+.block {
+    background: #fff;
+    padding: 0 10px 20px;
+    width: 100%;
+}
+
+.block.small {
+    width: calc(20% - 20px);
+}
+
+
+.block.big {
+    width: 80%;
+    margin-left: auto;
+}
+
+.block-title {
+    display: block;
+    line-height: 60px;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 0 10px;
+}
+
+.blog {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    background-color: #fff;
+    flex-flow: row wrap;
+}
+
+.blog .half{
+    width: 50%;
+}
+
+.blog .half.content {
+    padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
